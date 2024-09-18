@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head style="background-color:#000000;">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    <meta charset="utf-8">
+    <title>Scavenger Home</title>
+		<link rel="stylesheet" href="/files/style.css" />
+  <script>
+  // Set the date we're counting down toto
+  var countDownDate = new Date("Mon Sep 16 2024 18:00:00 GMT+1000").getTime();
+  // Update the count down every 1 second                                                                                                                                                                                                                                                    
+  var timerint = setInterval(function() {
+    // Get today's date and time
+    var now = new Date().getTime();
+    // Find the distance between now and the count down date
+    var distance = countDownDate - now;
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    var zerohours;
+    var zerominutes;
+    var zeroseconds;
+    if (hours < 10) { zerohours = "0" + hours } else { zerohours = hours };
+    if (minutes < 10) { zerominutes = "0" + minutes } else { zerominutes = minutes };
+    if (seconds < 10) { zeroseconds = "0" + seconds } else { zeroseconds = seconds };
+    // Display the result in the element with id="countdowntimer"
+    document.getElementById("countdowntimer").innerHTML = "THE HUNT HAS BEGUN: <br/><span style='font-size: 120px;'>" + zerohours + ":"
+    + zerominutes + ":<span style='color: #FF0000'>" + zeroseconds + "</span></span><br/>Hours : Minutes : Seconds";
+    // If the count down is finished, write some text
+    if (mm < 0) {
+      clearInterval(timerint);
+      document.getElementById("countdowntimer").innerHTML = "THE HUNT IS OVER";
+    } else if (days >= 0 && hours >= 2) { 
+      zerohours = zerohours - 2; 
+      if (zerohours < 10) { zerohours = "0" + zerohours } else { zerohours = zerohours };
+      document.getElementById("countdowntimer").innerHTML = "THE HUNT WILL BEGIN IN: <br/>" + "<span style='font-size: 120px;'>" + days + ":" + zerohours + ":"
+    + zerominutes + ":<span style='color: #FF0000'>" + zeroseconds + "</span></span><br/>Days : Hours : Minutes : Seconds";
+    }
+  }, 1000);
+</script>
+  </head>
+  <body class="fixed" style="background-color:#111111;color: #FFFFFF;"><div>
+    <center>
+	<h2><span style="color: #c70278">S</span><span style="color: #2EFF37">c</span><span style="color: #e86c00">a</span><span style="color: #00d6de">v</span><span style="color: #9600ed">e</span><span style="color: #009c08">n</span><span style="color: #d91400">g</span><span style="color: #d914F0">e</span><span style="color: #d91F0F">r</span> Hunt</h2>
+  <a href="https://firer.at/files/scavenger/Hunt_14.png" class="buttonW buttonss">Snap &amp; Seek</a>
+<!--   <a href="https://eamonnsnjp.glitch.me/files/scavengerhunt.html" class="buttonW buttonss">Snap &amp; Seek</a> -->
+  <br/>
+  <a href="https://eamonnsnjp.glitch.me/files/leaderboard.html" class="buttonW buttonss">Leaderboard</a>
+  <br/> <br/>
+<span style="width:100%; padding-bottom:5%;"><div class="counter-wrapper"><div class="counter-wrapper-inner"> 
+<span class="vlayer header" style="font-size: 60px; line-height: 70px; color: #FFFF00;"><b>Scavenger Hunt Timer</b></span>
+<br/><span id="countdowntimer"></span><br/><b>SUBMIT YOUR PICTURES<br/> BEFORE THE EVENT END</b>
+</div></div></span>
+  <br/>
+  <details>
+		<summary>Past Scavenger Hunts:</summary><br/>
+	<a href="https://firer.at/files/scavenger/Hunt_01.jpg" class="buttonW buttonss">First</a>
+	<a href="https://firer.at/files/scavenger/Hunt_02.jpg" class="buttonW buttonss">Second</a>
+  <a href="https://firer.at/files/scavenger/Hunt_03.jpg" class="buttonW buttonss">Third</a>
+	<a href="https://firer.at/files/scavenger/Hunt_04.jpg" class="buttonW buttonss">Fourth</a>
+	<a href="https://firer.at/files/scavenger/Hunt_05.png" class="buttonW buttonss">Fifth</a>
+  <a href="https://firer.at/files/scavenger/Hunt_06.png" class="buttonW buttonss">Sixth</a>
+  <a href="https://firer.at/files/scavenger/Hunt_07.png" class="buttonW buttonss">Seventh</a>
+  <a href="https://firer.at/files/scavenger/Hunt_08.png" class="buttonW buttonss">Eighth</a>
+  <a href="https://firer.at/files/scavenger/Hunt_09.png" class="buttonW buttonss">Ninth</a>
+  <a href="https://firer.at/files/scavenger/Hunt_10.png" class="buttonW buttonss">Tenth</a>
+  <a href="https://firer.at/files/scavenger/Hunt_11.png" class="buttonW buttonss">Eleventh</a>
+  <a href="https://firer.at/files/scavenger/Hunt_12.png" class="buttonW buttonss">Twlevth</a>
+  <a href="https://firer.at/files/scavenger/Hunt_13.png" class="buttonW buttonss">Thirteenth</a>
+    <details>
+      <summary>Past Special Hunts:</summary><br/>
+      <a href="https://firer.at/files/scavenger/SlumberHunt_01.png" class="buttonW buttonss">First SlumberHunt</a>
+    </details>
+  </details>
+  <br/>
+  <details>
+		<summary>Click to expand footer:</summary>
+			<br/><a href="https://firer.at/pages/games.html" class="buttonG buttonss">Go to Fires Games</a>
+	<p>Or Enter a URL here:<br/>
+  <form id="form" method="get">
+  <input type="url" id="text" value="https://" class="url" size="40" placeholder="https://bantervr.com" onchange="document.getElementById('form').action = this.value;" />
+  <input type="button" id="btn" value="Go" class="url" 
+         onclick="window.open(document.getElementById('text').value);" />
+  </form>
+	</p>
+	</details>
+  <p></p>
+
+	</center>
+	</div>
+  </body>
+</html>
