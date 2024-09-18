@@ -30,7 +30,7 @@
     document.getElementById("countdowntimer").innerHTML = "THE HUNT HAS BEGUN: <br/><span style='font-size: 120px;'>" + zerohours + ":"
     + zerominutes + ":<span style='color: #FF0000'>" + zeroseconds + "</span></span><br/>Hours : Minutes : Seconds";
     // If the count down is finished, write some text
-    if (mm < 0) {
+    if (distance < 0) {
       clearInterval(timerint);
       document.getElementById("countdowntimer").innerHTML = "THE HUNT IS OVER";
     } else if (days >= 0 && hours >= 2) { 
