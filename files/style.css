@@ -1,0 +1,32 @@
+  :root { color-scheme: dark; background-color:#000000;color: #FFFFFF; }
+  * {background-color: #000000}
+  /* Button Colours */
+  a.buttonG { color: #00FF00; }
+  a.buttonY { color: #FFFF00; }
+  a.buttonGY { color: #AAFF00; }
+  a.buttonR { color: #FF0000; }
+  a.buttonW { color: #FFFFFF; }
+  /* Button styles */
+  a.buttonss { 
+    padding: 0.8vh 0.8vw; border: 0.1vh outset buttonborder; border-radius: 1vh;
+    background-color: #202020; text-decoration: none; margin:2px; line-height: 2.2;
+  }
+
+  /* Base styles */
+  body { font-size: 35px; color: #FFFFFF; }
+  /* Larger screens */
+  @media (min-width: 1200px) { body { font-size: 45px; color: #FFFFFF; } } 
+  /* Smaller tablets and mobiles */
+  @media (max-width: 900px) { body { font-size: 30px; color: #FFFFFF; } }
+  input.url {font-size: 30px;}
+            
+ .counter-wrapper-inner {
+ background-color: #000000;
+ border: 1px solid #e6e6e6;
+ }
+ .counter-wrapper {
+ border: 1px solid #e6e6e6;
+ }
+ .counter-wrapper-inner div, .counter-wrapper-inner span, .header {
+ font-family: "Helvetica", sans-serif !important;
+ }
