@@ -3,11 +3,10 @@
 			this.el.browser.ToggleInteraction(true) 			} });
 
 
- 
   setTimeout(() => { 
     let leaderboard = document.getElementById("leaderboardpage");
-    leaderboard.browser.pageWidth=576;
-    leaderboard.browser.pageHeight=850;
+    leaderboard.browser.pageWidth=800;
+    leaderboard.browser.pageHeight=1200;
     leaderboard.browser.ToggleKeyboard(0);
     console.log("Hopefully set browser page width and height");
   }, 3000); 
