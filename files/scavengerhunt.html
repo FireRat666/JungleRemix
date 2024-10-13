@@ -48,7 +48,7 @@
   <!-- <a href="https://firer.at/files/scavenger/Hunt_18.png" class="buttonW buttonss">Snap &amp; Seek -18</a> -->
   <a href="#" id="snapnSeekLink" class="buttonW buttonss">Snap &amp; Seek</a>
   <br/>
-  <a href="https://jungleparty.firer.at/files/leaderboard.html?2" class="buttonW buttonss">Leaderboard</a>
+  <a href="#" id="leaderBoardLink" class="buttonW buttonss">Leaderboard</a>
   <br/> <br/>
 <span style="width:100%; padding-bottom:5%;"><div class="counter-wrapper"><div class="counter-wrapper-inner"> 
 <span class="vlayer header" style="font-size: 60px; line-height: 70px; color: #FFFF00;"><b>Scavenger Hunt Timer</b></span>
@@ -96,7 +96,9 @@
 	</center>
 	</div>
   <script>
-    document.getElementById('snapnSeekLink').href = `https://jungleparty.firer.at/files/scavengerhunt.html?${Math.floor(Math.random() * 1000) + 1}`; // Generate a random number between 1 and 1000, Construct the new URL with the random number Update the href attribute of the link
+    let randomAppendNum = Math.floor(Math.random() * 1000) + 1; // Generate a random number between 1 and 1000, Construct the new URL with the random number Update the href attribute of the link
+    document.getElementById('snapnSeekLink').href = `https://jungleparty.firer.at/files/scavengerhunt.html?${randomAppendNum}`;
+    document.getElementById('leaderBoardLink').href = `https://jungleparty.firer.at/files/leaderboard.html?${randomAppendNum}`;
   </script>
   </body>
 </html>
