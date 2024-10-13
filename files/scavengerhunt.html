@@ -46,7 +46,7 @@
     <center>
 	<h2><span style="color: #c70278">S</span><span style="color: #2EFF37">c</span><span style="color: #e86c00">a</span><span style="color: #00d6de">v</span><span style="color: #9600ed">e</span><span style="color: #009c08">n</span><span style="color: #d91400">g</span><span style="color: #d914F0">e</span><span style="color: #d91F0F">r</span> Hunt</h2>
   <!-- <a href="https://firer.at/files/scavenger/Hunt_18.png" class="buttonW buttonss">Snap &amp; Seek -18</a> -->
-  <a href="https://jungleparty.firer.at/files/scavengerhunt.html" class="buttonW buttonss">Snap &amp; Seek</a>
+  <a href="#" id="snapnSeekLink" class="buttonW buttonss">Snap &amp; Seek</a>
   <br/>
   <a href="https://jungleparty.firer.at/files/leaderboard.html?2" class="buttonW buttonss">Leaderboard</a>
   <br/> <br/>
@@ -95,5 +95,8 @@
 
 	</center>
 	</div>
+  <script>
+    document.getElementById('snapnSeekLink').href = `https://jungleparty.firer.at/files/scavengerhunt.html?${Math.floor(Math.random() * 1000) + 1}`; // Generate a random number between 1 and 1000, Construct the new URL with the random number Update the href attribute of the link
+  </script>
   </body>
 </html>
