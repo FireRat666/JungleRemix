@@ -6,6 +6,7 @@
 	<meta name="color-scheme" content="dark">
 	<meta property="og:image" content="https://jungleparty.firer.at/files/njp.png">
 	<link rel="stylesheet" href="/files/style.css" />
+  <script src="https://firer.at/scripts/RandomBG.js"></script>
     <!-- <style>* {background-color: #000000}</style> -->
     <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
 		<!-- IMPORTANT Script, required for the screen interaction for the leaderboard -->
@@ -90,8 +91,8 @@
 			<br/><a href="https://firer.at/pages/games.html" class="buttonG buttonss">Go to Fires Games</a>
 	<p>Or Enter a URL here:<br/>
   <form id="form" method="get">
-  <input type="url" id="text" value="https://" class="url" size="40" placeholder="https://bantervr.com" onchange="document.getElementById('form').action = this.value;" />
-  <input type="button" id="btn" value="Go" class="url" 
+  <input type="url" id="text" value="https://" class="url-form url-thing" placeholder="https://bantervr.com" onchange="document.getElementById('form').action = this.value;" />
+  <input type="button" id="btn" value="Go" class="url-thing" 
          onclick="window.open(document.getElementById('text').value);" />
   </form>
 	</p><br/><br/>
