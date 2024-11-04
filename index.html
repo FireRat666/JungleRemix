@@ -16,7 +16,7 @@
     <div style="display:none;"><a-scene sq-assetbundle="android: https://cdn.sidequestvr.com/file/574701/slipstream_island_night2_android; 
                              desktop: https://cdn.sidequestvr.com/file/574702/slipstream_island_night2_standalonewindows;"    
 
-             sq-maxoccupancy="number: 25" sq-enablespiderman sq-refreshrate="rate:90" sq-spawnpoint="position:37 2 10;" sq-clippingplane="near: 0.15; far: 900" embedded >
+             sq-maxoccupancy="number: 25" sq-enablespiderman sq-refreshrate="rate:90" sq-spawnpoint="position:37 2.1 10;" sq-clippingplane="near: 0.15; far: 900" embedded >
              <!-- sq-kitbundle="android: https://cdn.sidequestvr.com/file/584254/screens_kitbundle_android; 
                           desktop: https://cdn.sidequestvr.com/file/584255/screens_kitbundle_standalonewindows;"  -->
       
@@ -68,7 +68,15 @@
     <a-entity id="leaderboardpage" 
 			sq-browser="url: https://jungleparty.firer.at/files/leaderboard.html?1; mipMaps: 1; pixelsPerUnit: 700; mode: local;" 
 			position="56.7 4.3 -22.0" rotation="0 0 0" scale="2 2 1" sq-browser-interaction enable-interaction></a-entity>
-      
+    
+    <script>
+      const mirrorObject = new BS.GameObject("MyMirror");
+      const mirror = await mirrorObject.AddComponent(new BS.BanterMirror());
+      mirror.renderTextureSize = 2048;
+      const mirrortransform = await mirrorObject.AddComponent(new BS.Transform());
+      mirrortransform.position = new BS.Vector3(49,5,-11);
+      mirrortransform.localEulerAngles = new BS.Vector3(0,90,0);
+    </script>
     <!-- A Selfie Camera -->
     <!-- <a-entity sq-kititem="item: assets/_prefabs/selfiecamera/selfiecam.prefab" position="49.097 4.718 11.713" rotation="0 -40 0"></a-entity>  -->
 
