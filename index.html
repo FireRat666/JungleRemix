@@ -70,12 +70,15 @@
 			position="56.7 4.3 -22.0" rotation="0 0 0" scale="2 2 1" sq-browser-interaction enable-interaction></a-entity>
     
     <script>
+      async function createMirrorThing() {
       const mirrorObject = new BS.GameObject("MyMirror");
       const mirror = await mirrorObject.AddComponent(new BS.BanterMirror());
       mirror.renderTextureSize = 2048;
       const mirrortransform = await mirrorObject.AddComponent(new BS.Transform());
       mirrortransform.position = new BS.Vector3(49,5,-11);
       mirrortransform.localEulerAngles = new BS.Vector3(0,90,0);
+    }
+    createMirrorThing();
     </script>
     <!-- A Selfie Camera -->
     <!-- <a-entity sq-kititem="item: assets/_prefabs/selfiecamera/selfiecam.prefab" position="49.097 4.718 11.713" rotation="0 -40 0"></a-entity>  -->
