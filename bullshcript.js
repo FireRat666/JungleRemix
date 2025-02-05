@@ -9,4 +9,4 @@
     leaderboard.browser.pageHeight=1200;
     leaderboard.browser.ToggleKeyboard(0);
     console.log("Hopefully set browser page width and height");
-  }, 3000); 
+  }, 10000); 
