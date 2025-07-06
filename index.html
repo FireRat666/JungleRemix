@@ -7,8 +7,7 @@
 	<meta property="og:image" content="https://jungleparty.firer.at/files/njp.png">
 	<link rel="stylesheet" href="/files/style.css" />
   <script src="https://firer.at/scripts/RandomBG.js"></script>
-    <!-- <style>* {background-color: #000000}</style> -->
-    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <!-- <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script> -->
 		<!-- IMPORTANT Script, required for the screen interaction for the leaderboard -->
 		<script src="https://jungleparty.firer.at/bullshcript.js"></script>
   </head>
@@ -18,35 +17,16 @@
 	          	<!-- CAH Game --> 			
      <script src="https://hah.firer.at/script.js" 
               position="49 2.6 -5" instance="jungleparty"></script>
-	    
-	    <!-- sq-kitbundle="android: https://cdn.sidequestvr.com/file/584254/screens_kitbundle_android; 
-                          desktop: https://cdn.sidequestvr.com/file/584255/screens_kitbundle_standalonewindows;"  -->
-      
-    <!--- <div style="display:none;"><a-scene sq-assetbundle="android: https://cdn.sidequestvr.com/file/556855/slipstream_island_night2_android; 
-                             desktop: https://cdn.sidequestvr.com/file/556856/slipstream_island_night2_standalonewindows;" -->  
-    <!--> Youtube Playlist   
-    Just a reminder, your BritPop playlist is: PLZAE9cVaYOr0IVhh2Sdm89KuFIgUcQSjj  -->
-      
-<!--    
-   <script src="https://vidya.sdq.st/playlist.js" one-for-each-instance="true" instance="gemsnightparty" hand-controls="true"
-      position="53 4.5 -20.98" rotation="0 17.14 0" scale="5 5 1" volume="5"
-      button-position="53 2.8 -21" button-rotation="0 17 0" button-scale="1 1 1" spatial-min-distance="5" spatial-max-distance="30" mip-maps="0"
-      playlist="PLZAE9cVaYOr0IVhh2Sdm89KuFIgUcQSjj" announce="false" ></script>        <!--   --> 
 
     <!-- Screen for Movies/Screencast -->
       
 <!--   scale="4.7 4.7 1"   -->
-      <script id="bigBrowser" src="https://firer.at/scripts/firescreen.js" mipmaps="0" pixelsperunit="1100" castmode="true" backdrop="true" 
+      <script id="bigBrowser" src="https://firer.at/scripts/firescreenv2.js" mipmaps="0" pixelsperunit="1100" castmode="true" backdrop="true" 
               website="https://jungleparty.firer.at/?3"
-              position="53 4.48 -20.97" rotation="0 -17.14 0" scale="3.8 3.8 1" volumelevel="0.25" backdrop-color="#000000"
-              button-color="#00FF00" button-position="0 0.09 0" disable-interaction="false" announce="true" 
-              volup-color="#00FF00" voldown-color="#FFFF00" hand-controls="true" width="1280" height="720"
-              custom-button01-url="false" custom-button01-text="Screencast"
-              custom-button02-url="false" custom-button02-text="Some website!"
-              custom-button03-url="false" custom-button03-text="Another website">
+              position="53 4.48 -20.97" rotation="0 -17.14 0" scale="3.8 3.8 1" volumelevel="0.25" announce="true" 
+              hand-controls="true" width="1280" height="720">
         document.getElementById('bigBrowser').setAttribute('website', `https://jungleparty.firer.at/?${Math.floor(Math.random() * 1000) + 1}`);
       </script>    <!--   --> 
-      
       
     <!-- Main Fire Browser, grabbable/moveable  https://jungleparty.firer.at/files/scavengerhunt.html  -->
     <!--     -->    
@@ -81,8 +61,7 @@
     }
     createMirrorThing();
     </script>
-    <!-- A Selfie Camera -->
-    <!-- <a-entity sq-kititem="item: assets/_prefabs/selfiecamera/selfiecam.prefab" position="49.097 4.718 11.713" rotation="0 -40 0"></a-entity>  -->
+
     <script> // Stuff for the chat message stuff
       if(window.isBanter) { 
         // Helper function that polls until unityLoaded is true.
@@ -101,7 +80,7 @@
 
         (async () => {
           await waitForUnityLoaded();
-          await new Promise((resolve) => setTimeout(resolve, 3000));
+          await new Promise((resolve) => setTimeout(resolve, 4000));
           // Attach event listeners to all elements with the class '.firescreenc'.
           let firescreenolder = null;
           document.querySelectorAll('.firescreenc').forEach((element) => {
@@ -129,30 +108,6 @@
           });
         })();
 
-        // let firescreenolder = null;
-        // let thiswaitingforunity = true; var delaythinginterval;
-        // if (thiswaitingforunity) { 
-        //   delaythinginterval = setInterval(function() {
-        //     if (BS.BanterScene.GetInstance().unityLoaded) { 
-        //       thiswaitingforunity = false; clearInterval(delaythinginterval); 
-        //       setTimeout(async () => {
-        //         document.querySelectorAll('.firescreenc').forEach((element, index) => {
-        //           firescreenolder = element;
-        //           element.addEventListener('browsermessage', (e) => {
-        //             console.log("Received message from the webpage:", e.detail);
-        //             BS.BanterScene.GetInstance().OneShot(JSON.stringify({browsermessagething: BS.BanterScene.GetInstance().localUser.name + ": " + e.detail}));
-        //           });
-        //         });
-        //         let firebrowserthing = await BS.BanterScene.GetInstance().Find(`MyBrowser1`);
-        //         firebrowserthing.On("browser-message", (e) => {
-        //           console.log("Received message from the webpage:", e.detail);
-        //           BS.BanterScene.GetInstance().OneShot(JSON.stringify({browsermessagething: BS.BanterScene.GetInstance().localUser.name + ": " + e.detail}));
-        //         });
-        //       }, 3000);
-        //     };
-        //   }, 1000); 
-        // };
-
         BS.BanterScene.GetInstance().On("one-shot", async e => {
           const data = JSON.parse(e.detail.data);
             if (data.browsermessagething) { console.log(data.browsermessagething); browsermessageStuff(data.browsermessagething); };
@@ -174,7 +129,6 @@
 	<p><b>Click & Drag to Scroll</b><br/>VR Users use the top Right Trigger button to Click</p>
 	<a href="#" id="snapnSeekLink" class="buttonW buttonss">ScavengerHunt</a>
   <br/>
-	<!-- <a href="https://sidequestvr.github.io/SideQuest.Banter.Spaces/screen-cast/?sid=4202024" class="buttonW buttonss">Old ScreenCast</a> -->
 	<a href="https://screen.sdq.st:8443/?room=jungleremix" class="buttonW buttonss">ScreenCast</a>
   <br/>
 	<a href="https://jackbox.tv/" class="buttonG buttonss">JackBox.tv</a>
