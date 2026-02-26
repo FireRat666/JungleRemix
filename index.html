@@ -59,28 +59,29 @@
       mirrortransform.position = new BS.Vector3(49,5,-11);
       mirrortransform.localEulerAngles = new BS.Vector3(0,90,0);
     }
-    createMirrorThing();
+    window.addEventListener("unity-loaded", createMirrorThing);
     </script>
 
     <script> // Stuff for the chat message stuff
-      if(window.isBanter) { 
-        // Helper function that polls until unityLoaded is true.
-        function waitForUnityLoaded(pollInterval = 1000) {
-          return new Promise((resolve) => {
-            const checkLoaded = () => {
-              if (BS.BanterScene.GetInstance().unityLoaded) {
-                resolve();
-              } else {
-                setTimeout(checkLoaded, pollInterval);
-              }
-            };
-            checkLoaded();
-          });
-        }
+    
+        window.addEventListener("unity-loaded", async () => {
+        // // Helper function that polls until unityLoaded is true.
+        // function waitForUnityLoaded(pollInterval = 1000) {
+        //   return new Promise((resolve) => {
+        //     const checkLoaded = () => {
+        //       if (BS.BanterScene.GetInstance().unityLoaded) {
+        //         resolve();
+        //       } else {
+        //         setTimeout(checkLoaded, pollInterval);
+        //       }
+        //     };
+        //     checkLoaded();
+        //   });
+        // }
 
         (async () => {
-          await waitForUnityLoaded();
-          await new Promise((resolve) => setTimeout(resolve, 4000));
+          // await waitForUnityLoaded();
+          // await new Promise((resolve) => setTimeout(resolve, 4000));
           // Attach event listeners to all elements with the class '.firescreenc'.
           let firescreenolder = null;
           document.querySelectorAll('.firescreenc').forEach((element) => {
@@ -121,7 +122,7 @@
           thisfirebrowser.RunActions(JSON.stringify({"actions": [{ "actionType": "postmessage","strparam1": messageData }]}));
         };
         
-      }
+        });
     </script>
     </a-scene></div>
     <center>
