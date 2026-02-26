@@ -1,4 +1,4 @@
-setTimeout(() => { 
+window.addEventListener("unity-loaded", async () => {
     // Enables Interaction for all the browser windows by HBR
 	  AFRAME.registerComponent("enable-interaction", { init: async function() { await window.AframeInjection.waitFor(this.el, "browser");
 			this.el.browser.ToggleInteraction(true) 			} });
@@ -12,4 +12,4 @@ setTimeout(() => {
     console.log("Hopefully set browser page width and height");
   }, 12000); 
 
-  }, 8000); 
+});
