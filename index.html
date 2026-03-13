@@ -23,7 +23,7 @@
 <!--   scale="4.7 4.7 1"   -->
       <script id="bigBrowser" src="https://firer.at/scripts/firescreenv2.js" mipmaps="0" pixelsperunit="1100" castmode="true" backdrop="true" 
               website="https://jungleparty.firer.at/?3"
-              position="53 4.48 20.97" rotation="0 -17.14 0" scale="3.8 3.8 1" volumelevel="0.25" announce="true" disable-rotation="true"
+              position="53 4.48 20.97" rotation="0 -17.14 0" scale="4.7 4.7 1" volumelevel="0.25" announce="true" disable-rotation="true"
               hand-controls="true" width="1280" height="720">
         document.getElementById('bigBrowser').setAttribute('website', `https://jungleparty.firer.at/?${Math.floor(Math.random() * 1000) + 1}`);
       </script>    <!--   --> 
@@ -40,8 +40,7 @@
               icon-voldown-url="https://firer.at/files/VolumeLow.png"
               icon-direction-url="https://firer.at/files/Arrow.png"
               custom-button01-url="https://jungleparty.firer.at/files/scavengerhunt.html" custom-button01-text="Scavenger Hunt"
-              custom-button02-url="https://firer.at/pages/scuffeduno.html" custom-button02-text="Scuffed UNO!"
-              custom-button03-url="https://chat-space.firer.at/" custom-button03-text="Message Box">
+              custom-button02-url="https://firer.at/pages/scuffeduno.html" custom-button02-text="Scuffed UNO!">
         document.getElementById('smallBrowser').setAttribute('website', `https://jungleparty.firer.at/?${Math.floor(Math.random() * 1000) + 1}`);
       </script>  <!--    --> 
       
@@ -60,69 +59,6 @@
       mirrortransform.localEulerAngles = new BS.Vector3(0,90,0);
     }
     window.addEventListener("unity-loaded", createMirrorThing);
-    </script>
-
-    <script> // Stuff for the chat message stuff
-    
-        window.addEventListener("unity-loaded", async () => {
-        // // Helper function that polls until unityLoaded is true.
-        // function waitForUnityLoaded(pollInterval = 1000) {
-        //   return new Promise((resolve) => {
-        //     const checkLoaded = () => {
-        //       if (BS.BanterScene.GetInstance().unityLoaded) {
-        //         resolve();
-        //       } else {
-        //         setTimeout(checkLoaded, pollInterval);
-        //       }
-        //     };
-        //     checkLoaded();
-        //   });
-        // }
-
-        (async () => {
-          // await waitForUnityLoaded();
-          // await new Promise((resolve) => setTimeout(resolve, 4000));
-          // Attach event listeners to all elements with the class '.firescreenc'.
-          let firescreenolder = null;
-          document.querySelectorAll('.firescreenc').forEach((element) => {
-            firescreenolder = element;
-            element.addEventListener('browsermessage', (e) => {
-              console.log("Received message from the webpage:", e.detail);
-              BS.BanterScene.GetInstance().OneShot(
-                JSON.stringify({
-                  browsermessagething:
-                    BS.BanterScene.GetInstance().localUser.name + ": " + e.detail,
-                })
-              );
-            });
-          });
-
-          let firebrowserthing = await BS.BanterScene.GetInstance().Find(`MyBrowser1`);
-          firebrowserthing.On("browser-message", (e) => {
-            console.log("Received message from the webpage:", e.detail);
-            BS.BanterScene.GetInstance().OneShot(
-              JSON.stringify({
-                browsermessagething:
-                  BS.BanterScene.GetInstance().localUser.name + ": " + e.detail,
-              })
-            );
-          });
-        })();
-
-        BS.BanterScene.GetInstance().On("one-shot", async e => {
-          const data = JSON.parse(e.detail.data);
-            if (data.browsermessagething) { console.log(data.browsermessagething); browsermessageStuff(data.browsermessagething); };
-            if (data.messagething) { console.log(data.messagething); browsermessageStuff(data.messagething); };
-        });
-
-        async function browsermessageStuff(messageData) {
-          if (firescreenolder) { firescreenolder.components["sq-browser"].runActions([{ actionType: "postmessage", strparam1: messageData }]); }
-          let firebrowserthing = await BS.BanterScene.GetInstance().Find(`MyBrowser1`);
-          let thisfirebrowser = firebrowserthing.GetComponent(BS.ComponentType.BanterBrowser);
-          thisfirebrowser.RunActions(JSON.stringify({"actions": [{ "actionType": "postmessage","strparam1": messageData }]}));
-        };
-        
-        });
     </script>
     </a-scene></div>
     <center>
