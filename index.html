@@ -9,7 +9,7 @@
   <script src="https://firer.at/scripts/RandomBG.js"></script>
     <!-- <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script> -->
 		<!-- IMPORTANT Script, required for the screen interaction for the leaderboard -->
-		<script src="https://jungleparty.firer.at/bullshcript.js"></script>
+		<!-- <script src="https://jungleparty.firer.at/bullshcript.js"></script> -->
   </head>
   <body>
     <div style="display:none;"><a-scene sq-maxoccupancy="number: 25" sq-enablespiderman sq-refreshrate="rate:90" sq-spawnpoint="position:37 2.1 10;" sq-clippingplane="near: 0.15; far: 900" embedded >
@@ -18,8 +18,14 @@
      <script src="https://hah2.firer.at/hah.js" 
               position="49 2.6 5" instance="jungleparty" debug="true"></script>
 
+	          	<!-- Blackjack Game --> 			
+     <script src="https://hah2.firer.at/blackjack.js" 
+              position="49 2.6 -5" instance="junglebj" debug="true"></script>
+
+	          	<!-- UNO Game --> 		
       <script src="https://uno.firer.at/uno.js" 
               rotation="0 0 0" debug="true" position="49 2.8 0" instance="example1"></script> 
+
 	          	<!-- CAH Game --> 			
      <!-- <script src="https://hah.firer.at/script.js" 
               position="49 2.6 -5" instance="jungleparty" debug="true" crossorigin="anonymous"></script> -->
@@ -64,7 +70,7 @@
       mirrortransform.position = new BS.Vector3(49,5,-11);
       mirrortransform.localEulerAngles = new BS.Vector3(0,90,0);
     }
-    window.addEventListener("unity-loaded", createMirrorThing);
+    window.addEventListener("bs-loaded", createMirrorThing);
     </script>
     </a-scene></div>
     <center>
